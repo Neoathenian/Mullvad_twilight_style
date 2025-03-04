@@ -1,0 +1,155 @@
+/* =======================
+   GENERAL BROWSER THEME
+   ======================= */
+
+/* Chrome-like dark gray theme for Mullvad Browser */
+#navigator-toolbox {
+    background: #2B373D !important; /* Dark gray */
+}
+
+/* Tabs Bar */
+#TabsToolbar {
+    background: #2B373D !important;
+}
+
+/* Navigation Bar */
+#nav-bar {
+    background: #445760 !important; /* Slightly lighter gray */
+}
+
+/* Make buttons, text, and icons visible */
+#nav-bar * {
+    color: #e8eaed !important; /* Light gray text */
+}
+
+/* Make the Back & Forward buttons visible */
+#back-button,
+#forward-button {
+    fill: #ffffff !important; /* Arrows white */
+    color: #ffffff !important;
+}
+
+/* =======================
+   TAB STYLING
+   ======================= */
+
+/* Active Tab Styling */
+.tab-background[selected="true"] {
+    background: #3c4043 !important; /* Dark gray */
+    color: #ffffff !important;      /* White text */
+    border-radius: 5px !important;
+}
+
+/* Inactive Tabs */
+.tab-background {
+    background: #2B373D !important; /* Darker for inactive tabs */
+    color: #e8eaed !important;      /* Light text */
+    opacity: 1;
+}
+
+/* Ensure tab text is visible */
+.tab-label {
+    color: #ffffff !important;
+}
+
+/* =======================
+   URL BAR STYLING
+   ======================= */
+
+/* Primary URL bar styling */
+#urlbar {
+    background: #3c4043 !important; /* Dark gray */
+    color: #ffffff !important;      /* White text */
+    border-radius: 6px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* URL bar input text & placeholder */
+#urlbar-input {
+    background: #3c4043 !important; /* Same dark gray */
+    color: #ffffff !important;
+    border: none !important;
+}
+#urlbar-input::placeholder {
+    color: #b0b3b8 !important;      /* Light gray placeholder */
+}
+
+/* =======================
+   FIX THE EXPANDING WHITE AREA
+   ======================= */
+
+/* Override the "expanding" white bar (Mega Bar fix) */
+#urlbar[breakout],
+#urlbar[breakout][breakout-extend],
+.urlbarView {
+    background: #3c4043 !important; /* Dark gray to match */
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Override the one-off search suggestions dropdown */
+.urlbarView-row {
+    background: #3c4043 !important; /* Dark gray background */
+    color: #ffffff !important;      /* White text */
+}
+
+/* Ensure all parts of the expanding bar stay dark */
+#urlbar-container,
+#urlbar-background,
+#urlbar[focused="true"] > .urlbar-background,
+.urlbarView-body-inner {
+    background: #3c4043 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove unnecessary borders */
+#urlbar, #urlbar-container, #urlbar-background, #urlbar[focused="true"] {
+    border: none !important;
+}
+
+/* =======================
+   OPTIONAL BOTTOM BORDER
+   ======================= */
+
+/* Slight bottom border like Chrome */
+#navigator-toolbox::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #5f6368;
+}
+
+/* Remove extra borders for a cleaner look */
+#nav-bar,
+#TabsToolbar {
+    border: none !important;
+}
+
+
+/* =======================
+   MAKE TAB & WINDOW ICONS WHITE
+   ======================= */
+
+/* Close (X), New Tab (+) icons */
+.tabbrowser-tab .tab-close-button,
+.tabbrowser-tab .tab-close-button:hover,
+#tabs-newtab-button,
+#tabs-newtab-button:hover {
+    fill: #ffffff !important; /* White icons */
+    color: #ffffff !important;
+}
+
+/* Window Controls (Minimize, Maximize, Close) */
+.titlebar-buttonbox .titlebar-button {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* Make Settings Button (☰) White */
+#PanelUI-menu-button {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
