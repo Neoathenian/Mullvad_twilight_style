@@ -1,20 +1,30 @@
+:root {
+    --color-dark-gray:  #2B373D; /* title bar color*/
+    --color-lighter-gray: #445760; /* navigation bar*/
+    --color-url-bar: #3c4043; /* url bar color*/
+    /* --color-text:       #ffffff; */
+    --color-darkened-white:#b0b3b8; /*white to blend in more with dark stuff*/
+}
+
+
+
 /* =======================
    GENERAL BROWSER THEME
    ======================= */
 
 /* Chrome-like dark gray theme for Mullvad Browser */
 #navigator-toolbox {
-    background: #2B373D !important; /* Dark gray */
+    background: var(--color-dark-gray)  !important; /* Dark gray */
 }
 
 /* Tabs Bar */
 #TabsToolbar {
-    background: #2B373D !important;
+    background: var(--color-dark-gray)  !important;
 }
 
 /* Navigation Bar */
 #nav-bar {
-    background: #445760 !important; /* Slightly lighter gray */
+    background: var(--color-lighter-gray)  !important; /* Slightly lighter gray */
 }
 
 /* Make buttons, text, and icons visible */
@@ -33,19 +43,16 @@
    TAB STYLING
    ======================= */
 
-/* Active Tab Styling */
-.tab-background[selected="true"] {
-    background: #3c4043 !important; /* Dark gray */
-    color: #ffffff !important;      /* White text */
+   /* =======================
+   ACTIVE TAB CUSTOMIZATION: Green with Blue Border
+   ======================= */
+.tabbrowser-tab[selected="true"] .tab-background {
+    background-color: var(--color-lighter-gray) !important;
+    /* border: 2px solid var(--color-darkened-white) !important; */
+    color: #ffffff !important;
     border-radius: 5px !important;
 }
 
-/* Inactive Tabs */
-.tab-background {
-    background: #2B373D !important; /* Darker for inactive tabs */
-    color: #e8eaed !important;      /* Light text */
-    opacity: 1;
-}
 
 /* Ensure tab text is visible */
 .tab-label {
@@ -58,7 +65,7 @@
 
 /* Primary URL bar styling */
 #urlbar {
-    background: #3c4043 !important; /* Dark gray */
+    background: var(--color-url-bar)  !important; /* Dark gray */
     color: #ffffff !important;      /* White text */
     border-radius: 6px !important;
     border: none !important;
@@ -67,12 +74,12 @@
 
 /* URL bar input text & placeholder */
 #urlbar-input {
-    background: #3c4043 !important; /* Same dark gray */
+    background: var(--color-url-bar)  !important; /* Same dark gray */
     color: #ffffff !important;
     border: none !important;
 }
 #urlbar-input::placeholder {
-    color: #b0b3b8 !important;      /* Light gray placeholder */
+    color: var(--color-darkened-white)  !important;      /* Light gray placeholder */
 }
 
 /* =======================
@@ -83,7 +90,7 @@
 #urlbar[breakout],
 #urlbar[breakout][breakout-extend],
 .urlbarView {
-    background: #3c4043 !important; /* Dark gray to match */
+    background: var(--color-url-bar)  !important; /* Dark gray to match */
     color: #ffffff !important;
     border: none !important;
     box-shadow: none !important;
@@ -91,7 +98,7 @@
 
 /* Override the one-off search suggestions dropdown */
 .urlbarView-row {
-    background: #3c4043 !important; /* Dark gray background */
+    background: var(--color-url-bar)  !important; /* Dark gray background */
     color: #ffffff !important;      /* White text */
 }
 
@@ -100,7 +107,7 @@
 #urlbar-background,
 #urlbar[focused="true"] > .urlbar-background,
 .urlbarView-body-inner {
-    background: #3c4043 !important;
+    background: var(--color-url-bar)  !important;
     border: none !important;
     box-shadow: none !important;
 }
@@ -173,7 +180,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background-color: #445760 !important;
+    background-color: var(--color-lighter-gray)  !important;
 }
 
 
@@ -197,3 +204,55 @@
 .tab-text-indicator[label="Playing"] {
   color: #ffffff !important;
 }
+
+
+
+/* =======================
+   BOOKMARKS BAR CUSTOMIZATION
+   ======================= */
+  /* Remove extra border/shadow from the bookmarks bar */
+#PersonalToolbar {
+    background: var(--color-lighter-gray) !important;
+    border-bottom: 1px solid var(--color-lighter-gray) !important;
+    padding: 4px 8px !important;
+    box-shadow: none !important;
+}
+
+/* Disable any pseudo-element that might be adding a line */
+#PersonalToolbar::after {
+    display: none !important;
+}
+
+#PersonalToolbar svg,
+#PersonalToolbar .toolbarbutton-icon {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* Style individual bookmark items */
+/* Remove any borders and shadows from the bookmarks toolbar and its container */
+#navigator-toolbox,
+#navigator-toolbox::before,
+#navigator-toolbox::after,
+.toolbarshadow {
+    border: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+/* Remove bottom border from the bookmarks bar */
+#PersonalToolbar {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+}
+
+/* Remove top border from the content area and force its background to match */
+#appcontent {
+    border-top: none !important;
+    box-shadow: none !important;
+    background: var(--color-lighter-gray) !important;
+    margin-top: -1px !important;  /* Negative margin to cover any lingering line */
+}
+
+
